@@ -2,8 +2,6 @@
 
 This repository contains academic projects developed for a university course in Numerical Methods using MATLAB. The focus of the projects is on efficient numerical computation, stability, and implementation of classical algorithms in scientific computing.
 
----
-
 # Project 1 — Numerical Integration over a Circular Domain
 
 ## Problem Description
@@ -20,8 +18,6 @@ Since the domain is non-rectangular, direct application of standard quadrature r
 
 <img src="images/b7aa3e32c3a9f9443ef4a049649b2d10672aa9da.png" title="" alt="" width="430">
 
----
-
 ## Mathematical Formulation
 
 A coordinate transformation was introduced:
@@ -37,8 +33,6 @@ where $J(u,v)$ is the Jacobian determinant of the transformation.
 
 This reduces the problem to integration over a square domain.
 
----
-
 ## Numerical Methods
 
 The following methods were applied:
@@ -51,8 +45,6 @@ The following methods were applied:
 
 The Gauss–Legendre rule was applied independently in both directions.
 
----
-
 ## Testing
 
 Selected validation tests included:
@@ -63,13 +55,9 @@ Selected validation tests included:
 
 Convergence was verified by increasing the number of subintervals.
 
----
-
 ## Result
 
 The implemented method successfully produced accurate and stable numerical approximations of integrals over circular domains.
-
----
 
 # Project 2 — Inverse Power Method for Tridiagonal Matrices
 
@@ -92,8 +80,6 @@ The main constraints were:
 
 <img src="images/2f6ef8ed42e1c5b225ca6a5f2658e2de5a61bda3.png" title="" alt="" width="250">
 
----
-
 ## Mathematical Formulation
 
 The shifted inverse iteration is defined by:
@@ -106,8 +92,6 @@ Under suitable conditions, the sequence $\{x_k\}$ converges to the eigenvector c
 The eigenvalue is approximated using the Rayleigh quotient:
 
 $\lambda_k = x_k^T A x_k.$
-
----
 
 ## QR Decomposition Using Householder Reflections
 
@@ -129,8 +113,6 @@ Because $A$ is tridiagonal, the resulting $R$ matrix is banded and stored using 
 
 This significantly reduces memory usage.
 
----
-
 ## Solving Linear Systems
 
 After QR decomposition, systems were solved in two steps:
@@ -139,8 +121,6 @@ After QR decomposition, systems were solved in two steps:
 2. Backward substitution for the banded matrix $R$
 
 This allowed solving each system in $O(n)$ time.
-
----
 
 ## Inverse Iteration Scheme
 
@@ -153,8 +133,6 @@ The full iteration procedure consists of:
 5. Convergence test
 
 The QR decomposition is computed only once and reused.
-
----
 
 ## Adaptive Shift Update
 
@@ -183,8 +161,6 @@ The table below compares the total computation time of the inverse iteration met
 | $10^{-5}$ | 0.0217               | 0.0458                  | -1.113        | Fixed  |
 | $10^{-6}$ | 0.0172               | 0.0394                  | -1.290        | Fixed  |
 
----
-
 ## Numerical Tests
 
 Representative tests included:
@@ -206,13 +182,9 @@ Additional stability checks were performed:
 3. Conditioning of $(A-\mu I)$  
 4. Detection of near-singular cases  
 
----
-
 ## Result
 
 The algorithm reliably computed accurate eigenvalues for large-scale tridiagonal matrices within the imposed performance constraints.
-
----
 
 # Warm-up Workshop — Nonlinear Root Finding
 
@@ -237,8 +209,6 @@ The solution was based on:
 
 The bisection method guarantees convergence for simple roots.
 
----
-
 ## Testing
 
 Selected tests included:
@@ -247,10 +217,6 @@ Selected tests included:
 2. Oscillatory functions  
 3. Functions with clustered roots  
 
----
-
 ## Result
 
 The implemented procedure successfully detected and refined real roots for a wide range of test functions.
-
-
